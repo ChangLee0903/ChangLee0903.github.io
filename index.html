@@ -1,10 +1,771 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>你好，GitHub</title>
-  </head>
-  <body>
-    <h1>覺得厲害</h1>
-  </body>
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Zhang-Wei Hong</title>
+
+  <link rel="icon" href="assests/icon.png" />
+
+  <link rel="stylesheet" type="text/css" href="assests/style.css">
+  <link rel="stylesheet" type="text/css" href="assests/academicons.min.css">
+  <script src="assests/fontawesome.js"></script>
+
+  <script>
+    function pressBtn(p) {
+
+      var id_btn=["exp-btn", "pub-btn"], class_btn=["fas fa-plus-square", "fas fa-minus-square"];
+      var id_div=["exp-div", "pub-div"], style_div=["height: 300px; overflow: auto;", "height: 400px; overflow: auto;"];
+
+      var btn = document.getElementById(id_btn[p]);
+      if(btn.className == class_btn[0]) {
+        btn.className = class_btn[1];
+        document.getElementById(id_div[p]).style = "";
+      }
+      else {
+        btn.className = class_btn[0];
+        document.getElementById(id_div[p]).style = style_div[p];
+      }
+    }
+
+    function img_hover(e, f) {
+      e.setAttribute("src", f);
+    }
+    function img_unhover(e, f) {
+      e.setAttribute("src", f);
+    }
+  </script>
+</head>
+
+<body>
+  <table style="max-width: 900px;"><tbody>
+    <tr style="padding: 0px;">
+      <td style="padding: 0px;">
+
+        <!--bio-->
+        <table><tbody>
+          <tr style="padding: 0px;">
+            <td style="padding: 2%; width: 70%; vertical-align: middle;">
+
+              <p style="text-align: center;">
+                <name>Zhang-Wei Hong</name>
+              </p>
+
+              <p>
+                <b>Research</b>: My aim is to address practical <b>search problems</b> using tools for sequential decision-making such as reinforcement learning (RL) and the multi-arm bandit framework. I broadly interpret search challenges as discovery of nearly optimal solutions within an huge search space. Addressing these challenges is akin to strike a balance between exploration (deciding when to try the unknown) and exploitation (deciding when to leverage what's known). Thus, I believe that the sequential decision-making principles of balancing exploration and exploitation are crucial for devising effective solutions for search challenges. My research is focused on the following key areas:
+                <ul>
+                  <li><b>Sample Efficient RL:</b> Given that resolving many search problems necessitates costly real-world interactions or the use of high-fidelity simulations, my early works are dedicated to creating RL algorithms that can learn effective policies more efficiently with minimal human intervention and less data. (References: <a href="https://arxiv.org/pdf/2310.04413.pdf">NeurIPS'23</a>, <a href="https://openreview.net/forum?id=Hk3m8Nh7mn">ICML'23</a>, <a href="https://arxiv.org/abs/2307.12983">ICML'23</a>, <a href="https://openreview.net/pdf?id=OhUAblg27z">ICLR'23</a>, <a href="https://openreview.net/forum?id=LedObtLmCjS">ICLR'22</a>, and  <a href="https://openreview.net/forum?id=OXRZeMmOI7a">ICLR'22</a>)  </li>
+                  <li><b>Domain-agnostic Exploration Strategies:</b> At the core of solving search challenges is the capability to experiment with new solutions in an efficient manner, minimizing repetition and accurately estimating outcomes with fewer trials. Existing exploration methods often rely on estimating uncertainty through domain-specific features, necessitating significant human effort and trial and error. This limitation prevents us from applying single exploration strategy to many problems. My goal is to develop domain-agnostic exploration strategies. (References: <a href="https://arxiv.org/pdf/2211.07627.pdf">NeurIPS'23</a>) </li>
+                  <li><b>Applications:</b> In addition to algorithms, I'm interested in addressing real-world problems by framing them as search challenges and applying my algorithms to these problems. My recent interests include applications in AI safety (e.g., red teaming), cybersecurity, software testing, and scientific endeavors. (References: <a href="https://arxiv.org/pdf/2402.19464.pdf">ICLR'24</a>)</li> 
+                </ul>
+              </p>
+
+              <p> <b>Bio</b>: 
+                I'm a 4th year Ph.D. student in Electrical Engineering and Computer Science (EECS) at <a href="https://www.mit.edu/">Massachusetts Institute of Technology (MIT)</a>, advised by Prof. <a href="http://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a>.  I finished my B.S. degree and M.S. degree at National Tsing Hua University in close colloaboration with Prof. <a href="https://scholar.google.com/citations?user=5mYNdo0AAAAJ&hl=en">Chun-Yi Lee</a> and Prof. <a href="https://aliensunmin.github.io/">Min Sun</a>. Previously, I was fortunate to work with Prof. <a href="https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters">Jan Peters</a> at TU Darmstadt in Germany. Also, I was working at <a href="https://preferred.jp/en/company/">Preferred Networks</a> with Dr. <a href="https://gjmaeda.github.io/">Guilherme Maeda</a> and <a href="https://prabhatnagarajan.com/">Prabhat Nagarajan</a>.
+              </p>
+
+              <p style="text-align: center;">
+                <a href="mailto:zwhong@mit.edu" target="_blank"><i class="fas fa-envelope ai-2x"></i></a>&nbsp;
+                <a href="https://github.com/williamd4112" target="_blank"><i class="fab fa-github ai-2x"></i></a>&nbsp;
+                <a href="files/zhangwei-cv.pdf" target="_blank"><i class="ai ai-cv-square ai-2x"></i></a>&nbsp;
+                <a href="https://scholar.google.com/citations?user=GZkyN4cAAAAJ&hl" target="_blank"><i class="ai ai-google-scholar-square ai-2x"></i></a>&nbsp;
+              </p>
+            </td>
+
+            <td style="padding: 2%; width: 25%; max-width: 25%;">
+              <img src="assests/profile_photo.png" style="border-radius: 50%;" onmouseover="img_hover(this, 'assests/profile_photo.png');" onmouseout="img_unhover(this, 'assests/profile_photo.png');" />
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!--experience-->
+        <table><tbody>
+          <tr>
+            <td class="all">
+              <heading>
+                <i class="fas fa-briefcase"></i>&nbsp;&nbsp;Experience<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(0)" id="exp-btn"></i>
+              </heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <br>
+        <div style="height: 300px; overflow: auto;" id="exp-div">
+          <table><tbody>
+            <tr>
+              <td class="exp-avatar">
+                <img src="imgs/avatar_ibm.png" />
+              </td>
+
+              <td class="exp-description">
+                <b>Research Intern</b>
+                <span style="float: right;">Jun. 2023 - Sep. 2023</span>
+                <br>
+                <a href="https://mitibmwatsonailab.mit.edu/" target="_blank">MIT-IBM Watson AI Lab</a>
+                <br>
+                Advisor: <a href="https://akashgit.github.io/">Akash Srivastava</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="exp-avatar">
+                <img src="imgs/avatar_msr.png" />
+              </td>
+
+              <td class="exp-description">
+                <b>Research Intern</b>
+                <span style="float: right;">Jun. 2022 - Oct. 2022</span>
+                <br>
+                <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/" target="_blank">Microsoft Research Montreal</a>
+                <br>
+                Advisor: <a href="https://www.microsoft.com/en-us/research/people/rolaroch/">Romain Laroche</a> and <a href="https://www.microsoft.com/en-us/research/people/retachet/">Remi Tachet des Combes</a>.
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_pfn.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Research Intern</b>
+                  <span style="float: right;">Jun. 2019 - Oct. 2019</span>
+                  <br>
+                  <a href="https://www.preferred-networks.jp/en/" target="_blank">Preferred Networks</a>
+                  <br>
+                  Advisor: <a href="https://prabhatnagarajan.com/">Prabhat Nagarajan</a> and Dr. <a href="https://gjmaeda.github.io/">Guilherme Maeda</a>.
+                </td>
+              </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_appier.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Research intern</b>
+                  <span style="float: right;">Feb. 2019 - Jun. 2019</span>
+                  <br>
+                  <a href="https://www.appier.com//" target="_blank">Appier</a>
+                  <br>
+                  Advisor: Prof. <a href="https://aliensunmin.github.io" target="_blank">Min Sun</a>
+                </td>
+              </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_tud.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Visiting researcher</b>
+                  <span style="float: right;">Jul. 2018 - Oct. 2018</span>
+                  <br>
+                  <a href="https://www.ias.informatik.tu-darmstadt.de/" target="_blank">Intelligent Autonomous System (IAS) group at TU Darmstadt</a>
+                  <br>
+                  Advisor: Prof. <a href="https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters" target="_blank">Jan Peters</a>
+                </td>
+              </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_elsa.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Research Assistant</b>
+                  <span style="float: right;">2017 Jul. - 2020 Mar.</span>
+                  <br>
+                  <a href="https://www.facebook.com/ElsaResearchLab/" target="_blank">ELSA Lab at National Tsing Hua University</a>
+                  <br>
+                  Advisor: Prof. <a href="http://cymaxwelllee.wixsite.com/elsa" target="_blank">Chun-Yi Lee</a>
+                </td>
+              </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="exp-avatar">
+                <img src="imgs/avatar_nthu.png" />
+              </td>
+
+              <td class="exp-description">
+                <b>Research Collaboration</b>
+                <span style="float: right;">2016 Oct. - 2017 Mar.</span>
+                <br>
+                <a href="https://aliensunmin.github.io/lab/info.html" target="_blank">Vision Science Lab at National Tsing Hua University</a>
+                <br>
+                Advisor: Prof. <a href="https://aliensunmin.github.io/" target="_blank">Min Sun</a>
+              </td>
+            </tr>
+        </tbody></table>
+        <br>
+        <table><tbody>
+          <tr>
+            <td class="exp-avatar">
+              <img src="imgs/avatar_nvidia.png" />
+            </td>
+
+            <td class="exp-description">
+              <b>Teaching Assistant</b>
+              <span style="float: right;">2017 - 2018</span>
+              <br>
+              <a href="https://www.nvidia.com/zh-tw/" target="_blank">Taiwan NVIDIA Deep Learning Institute</a>
+              <br>
+              Advisor: Prof. <a href="http://cymaxwelllee.wixsite.com/elsa" target="_blank">Chun-Yi Lee</a>
+            </td>
+          </tr>
+      </tbody></table>
+      <br>
+        <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_mtk.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Software Engineering Intern</b>
+                  <span style="float: right;">Jul. 2016 - Nov. 2016</span>
+                  <br>
+                  <a href="https://www.mediatek.com/" target="_blank">Mediatek</a>
+                  <br>
+                  Advisor: <a href="https://www.linkedin.com/in/antliu/?originalSubdomain=tw/" target="_blank">Anthony Liu</a>
+                </td>
+              </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+              <tr>
+                <td class="exp-avatar">
+                  <img src="imgs/avatar_itri.png" />
+                </td>
+
+                <td class="exp-description">
+                  <b>Contract Software Engineer</b>
+                  <span style="float: right;">Oct. 2015 - Dec. 2015</span>
+                  <br>
+                  <a href="https://www.itri.org.tw/english/" target="_blank">Industrial Technology Research Institute (ITRI) </a>
+                </td>
+              </tr>
+          </tbody></table>
+        </div>
+        <br><br>
+
+        <!--publications-->
+        <table><tbody>
+          <tr>
+            <td class="all">
+              <heading>
+                <i class="far fa-file-alt"></i>&nbsp;&nbsp;Selected Publications<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(1)" id="pub-btn"></i>
+              </heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <br>
+        <div style="height: 400px; overflow: auto;" id="pub-div">
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_curisoity_redteam.png" />
+              </td>
+              <td class="pub-description">
+                <papertitle>Curiosity-driven Red-teaming for Large Language Models</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Idan Shenfeld, Tsun-Hsuan Wang, Yung-Sung Chuang, Aldo Pareja, James R. Glass, Akash Srivastava, Pulkit Agrawal </I>                     
+                <br>
+                  Accepted as a conference paper in ICLR 2024
+                <br>
+                  <a href="https://arxiv.org/pdf/2402.19464.pdf" target="_blank">Paper</a> |
+                  <a href="https://github.com/Improbable-AI/curiosity_redteam" target="_blank">Code</a> |
+                  <a href="bibtex/hong2024curiosity.bib" target="_blank">Bibtex </a>                                    
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_dw.gif" />
+              </td>
+              <td class="pub-description">
+                <papertitle>Beyond Uniform Sampling: Offline Reinforcement Learning with Imbalanced Datasets </papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Aviral Kumar, Sathwik Karnik, Abhishek Bhandwaldar, Akash Srivastava, Joni Pajarinen, Romain Laroche, Abhishek Gupta, Pulkit Agrawal </I>             
+                <br>
+                  Accepted as a conference paper in NeurIPS 2023
+                <br>
+                  <a href="https://arxiv.org/pdf/2310.04413.pdf" target="_blank">Paper</a> |
+                  <a href="https://github.com/Improbable-AI/dw-offline-rl" target="_blank">Code</a> |                 
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_eipo_icra.gif" />
+              </td>
+              <td class="pub-description">
+                <papertitle>Maximizing Velocity by Minimizing Energy</papertitle>
+                <br>
+                <I>Srinath Mahankali*, Chi-Chang Lee*, Gabriel B. Margolis, <b>Zhang-Wei Hong</b>, Pulkit Agrawal</I>             
+                <br>
+                  Accepted as a conference paper in ICRA 2024
+                <br>
+                  <a href="" target="_blank">Paper (coming soon)</a>            
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_tgrl.png" />
+              </td>
+              <td class="pub-description">
+                <papertitle>TGRL: An Algorithm for Teacher Guided Reinforcement Learning </papertitle>
+                <br>
+                <I>Idan Shenfeld, <b>Zhang-Wei Hong</b>, Aviv Tamar, Pulkit Agrawal</I>               
+                <br>
+                  Accepted as a conference paper in ICML 2023
+                <br>
+                  <a href="https://openreview.net/forum?id=Hk3m8Nh7mn" target="_blank">Paper</a> |
+                  <a href="https://sites.google.com/view/tgrl-paper/home" target="_blank">Website</a> |
+                  <a href="https://github.com/idanshen/cleanrl/blob/master/cleanrl/tgrl_continuous_action.py" target="_blank">Code</a> |                 
+              </td>
+            </tr>
+          </tbody></table>
+          
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_pql.png" />
+              </td>
+              <td class="pub-description">
+                <papertitle>Parallel Q-Learning: Scaling Off-policy Reinforcement Learning under Massively Parallel Simulation</papertitle>
+                <br>
+                <I>Zechu Li*, Tao Chen*, <b>Zhang-Wei Hong</b>, Anurag Ajay, Pulkit Agrawal</I>               
+                <br>
+                  Accepted as a conference paper in ICML 2023
+                <br>
+                  <a href="https://arxiv.org/abs/2307.12983" target="_blank">Paper</a> |                 
+                  <a href="https://github.com/Improbable-AI/pql" target="_blank">Code</a> |                 
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_harness.png" />
+              </td>
+              <td class="pub-description">
+                <papertitle>Harnessing Mixed Offline Reinforcement Learning Datasets via Trajectory Reweighting </papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b> Pulkit Agrawal, Remi Tachet des Combes and Romain Laroche</I>
+                <br>
+                  Accepted as a conference paper in ICLR 2023
+                <br>
+                  <a href="https://openreview.net/pdf?id=OhUAblg27z" target="_blank">Paper</a> |
+                  <a href="https://github.com/Improbable-AI/harness-offline-rl" target="_blank">Code</a> |                 
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_eipo.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Redeeming intrinsic rewards via constrainted optimization</papertitle>
+                <br>
+                <I>Eric Chen*,  <b>Zhang-Wei Hong*</b>, Joni Pajarinen and Pulkit Agrawal</I> (* indiccates co-first author)
+                <br>
+                  Accepted as a conference paper in NeurIPS 2022
+                <br>
+                <a href="pubs/neurips22_eipo.pdf" target="_blank">Paper</a> |
+                <a href="https://sites.google.com/view/neurips22-eipo/" target="_blank">Website</a> |
+                <a href="https://github.com/Improbable-AI/eipo" target="_blank">Code</a> |
+                <a href="https://news.mit.edu/2022/ensuring-ai-works-with-right-dose-curiosity-1110" target="_blank"> MIT News</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_bilinear.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Bilinear Value Networks for Multi-goal Reinforcement Learning</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong*</b>, Ge Yang*,  and Pulkit Agrawal</I> (* indiccates co-first author)
+                <br>
+                  International Conference on Learning Representation (ICLR) 2022 - Conference paper
+                <br>
+                <a href="https://openreview.net/forum?id=LedObtLmCjS" target="_blank">Paper</a> | <a href="https://github.com/Improbable-AI/bvn" target="_blank">Code </a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_ter.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Topological Experience Replay</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Tao Chen, Yen-Chen Lin, Joni Pajarinen, and Pulkit Agrawal</I>
+                <br>
+                  International Conference on Learning Representation (ICLR) 2022 - Conference paper
+                <br>
+                <a href="https://openreview.net/forum?id=OXRZeMmOI7a" target="_blank">Paper</a> | <a href="https://github.com/Improbable-AI/ter" target="_blank">Code </a>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_iros22.gif" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Stubborn: A Strong Baseline for Indoor Object Navigation</papertitle>
+                <br>
+                <I>Haokuan Luo, Albert Yue, <b>Zhang-Wei Hong </b>, Pulkit Agrawal </I>
+                <br>
+                  IEEE/RSJ International Conference on Intelligent Robots and Systems 2022 - Conference paper
+                <br>
+                <a href="https://arxiv.org/pdf/2203.07359.pdf" target="_blank">Paper</a> |
+                <a href="https://github.com/Improbable-AI/Stubborn" target="_blank">Code</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_icra2021.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Reducing the Deployment-Time Inference Control Costs of Deep Reinforcement Learning Agents via an Asymmetric Architecture</papertitle>
+                <br>
+                <I>Chin-Jui Chang, Yu-Wei Chu, Chao-Hsien Ting, Hao-Kang Liu, <b>Zhang-Wei Hong</b>, and Chun-Yi Lee</I>
+                <br>
+                  International Conference on Robotics and Automation (ICRA) 2021 - Conference paper
+                <br>
+                <a href="pubs/icra2021.pdf" target="_blank">Paper</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_ecml2021.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Periodic Intra-Ensemble Knowledge Distillation for Reinforcement Learning</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Prabhat Nagarajan, and Guilherme Maeda</I>
+                <br>
+                  European Conference on Machine Learning (ECML) 2021 - Conference paper
+                <br>
+                <a href="pubs/ecml2021.pdf" target="_blank">Paper</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_self-adv.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Adversarial Active Exploration for Inverse Dynamics Model Learning</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Tsu-Jui Fu, Tzu-Yun Shann, Yi-Hsiang Chang, and Chun-Yi Lee</I>
+                <br>
+                  Conference on Robot Learning (CoRL) 2019 - Oral
+                <br>
+                <a href="pubs/corl19_self-adv.pdf" target="_blank">Paper</a> | <a href="projs/corl19_self-adv.html" target="_blank">Project</a>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_div-exploration.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Diversity-Driven Exploration Strategy for Deep Reinforcement Learning</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Tzu-Yun Shann, Shih-Yang Su, Yi-Hsiang Chang, Tsu-Jui Fu, and Chun-Yi Lee</I>
+                <br>
+                  Neural Information Processing Systems (NeurIPS) 2018 - Poster
+                <br>
+                  International Conference on Representation Learning (ICLR) Workshop 2018
+                <br>
+                <a href="pubs/nips18_div-driven.pdf" target="_blank">Paper</a> | <a href="projs/nips18_div-driven.html" target="_blank">Project</a>
+              </td>
+            </tr>
+        </tbody></table>
+        <br>
+
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_ijcai2018_v2r.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Virtual-to-Real: Learning to Control in Visual Semantic Segmentation</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Chen Yu-Ming, Shih-Yang Su, Tzu-Yun Shann, Yi-Hsiang Chang, Hsuan-Kung Yang, Brian Hsi-Lin Ho, Chih-Chieh Tu, Yueh-Chuan Chang, Tsu-Ching Hsiao, Hsin-Wei Hsiao, Sih-Pin Lai, and Chun-Yi Lee</I>
+                <br>
+                  International Joint Conference on Artificial Intelligence (IJCAI) 2018 - Oral
+                <br>
+                <a href="pubs/ijcai2018_v2r.pdf" target="_blank">Paper</a> | <a href="https://hellochick.github.io/projects/Sim-to-Real" target="_blank">Project
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_aamas2018_dpiqn.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Deep Policy Inference Q-Network for Multi-Agent Systems</papertitle>
+                <br>
+                <I><b>Zhang-Wei Hong</b>, Shih-Yang Su, Tzu-Yun Shann, Yi-Hsiang Chang, and Chun-Yi Lee</I>
+                <br>
+                International Conference On Autonomous Agents and Multi-Agent Systems (AAMAS) 2018 - Oral
+                <br>
+                <a href="pubs/aamas2018_dpiqn.pdf" target="_blank">Paper</a>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_ijcai2017_adv.gif" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Tactics of adversarial attack on deep reinforcement learning agents</papertitle>
+                <br>
+                <I>Yen-Chen Lin, <b>Zhang-Wei Hong</b>, Yuan-Hong Liao, Meng-Li Shih, Ming-Yu Liu, and Min Sun </I>
+                <br>
+                  International Joint Conference on Artificial Intelligence (IJCAI) 2018 - Poster
+                <br>
+                <a href="pubs/ijcai2017_adv.pdf" target="_blank">Paper</a> | <a href="https://yenchenlin.me/adversarial_attack_RL/" target="_blank">Project</a>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+          <!--<table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_l2c.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>L2C: Describing Visual Differences Needs Semantic Understanding of Individuals</papertitle>
+                <br>
+                <I>An Yang, Xin Wang, <b>Tsu-Jui Fu</b>, and William Yang Wang</I>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_sscr.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>SSCR: Iterative Language-Based Image Editing via Self-Supervised Counterfactual Reasoning</papertitle>
+                <br>
+                <I><b>Tsu-Jui Fu</b>, Xin Wang, Scott Grafton, Miguel Eckstein, and William Yang Wang</I>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_mtst.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Multimodal Style Transfer Learning for Outdoor Vision-and-Language Navigation</papertitle>
+                <br>
+                <I>Wanrong Zhu, Xin Wang, <b>Tsu-Jui Fu</b>, An Yan, Pradyumna Narayana, Kazoo Sone, Sugato Basu, William Yang Wang</I>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>
+          <table><tbody>
+            <tr>
+              <td class="pub-avatar">
+                <img src="imgs/avatar_ssi.png" />
+              </td>
+
+              <td class="pub-description">
+                <papertitle>Self-Supervised Policy Initialization for Playing Games with Language Hints</papertitle>
+                <br>
+                <I><b>Tsu-Jui Fu</b> and William Yang Wang</I>
+              </td>
+            </tr>
+          </tbody></table>
+          <br>-->
+
+        </div>
+        <br><br>
+
+        <!--book-->
+        <table><tbody>
+        <tr>
+          <td class="all">
+            <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Book</heading>
+          </td>
+        </tr>
+        <tr>
+          <td class="all">
+
+            <br>
+            <b>Lecture notes</b>, <a href="files/6_484_Lecture_notes.pdf" target="_blank">6.8200 (previsouly 6.484) Computational sensorirmotor learning</a>, MIT
+
+          </td>
+
+        </tr>
+        </tbody></table>
+        <br><br>
+
+        <!--talks-->
+        <table><tbody>
+          <tr>
+            <td class="all">
+              <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Talks</heading>
+            </td>
+          </tr>
+          <tr>
+            <td class="all">
+
+              <br>
+              <b>Invited talk at <a href="https://www.microsoft.com/en-us/research/project/project-turing//">Microsoft Turing Team</a></b>, Host: <a href="https://hardik2396.github.io/" target="_blank">Dr. Hardik Chauhan</a>
+
+              <br>
+              <b>Invited talk at <a href="https://www.macro-eyes.com/">Macro eyes</a></b>, Host: <a href="https://optml.mit.edu/" target="_blank">Prof. Suvrit Sra</a>, MIT
+
+              <br>
+              <b>Invited talk at <a href="https://www.pair.toronto.edu/robotics-rg/">Toronto AI in Robotics Seminar</a></b>, Host: <a href="https://www.youtube.com/watch?v=RvTQLT8QLqQ&ab_channel=AIRoboticsSeminar-UniversityofToronto/" target="_blank">Prof. Igor Gilitschenski</a>, University of Toronto
+              
+            </td>
+
+          </tr>
+          </tbody></table>
+          <br><br>
+
+        <!--teaching-->
+        <table><tbody>
+            <tr>
+              <td class="all">
+                <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Teaching</heading>
+              </td>
+            </tr>
+            <tr>
+              <td class="all">
+
+                <br>
+                <b>Teaching Assistant</b>, <a href="https://pulkitag.github.io/6.484/" target="_blank">6.484 Computational sensorirmotor learning</a>, MIT
+                <span style="float: right">Spring 2022</span>
+
+              </td>
+            </tr>
+
+            <tr>
+              <td class="all">
+
+                <br>
+                <b>Teaching Assistant</b>, <a href="https://pulkitag.github.io/rlbootcamp-iap/" target="_blank">6.S090 Deep learning for control</a>, MIT
+                <span style="float: right">Spring 2021</span>
+
+              </td>
+            </tr>
+
+            <tr>
+              <td class="all">
+
+                <br>
+                <b>Teaching Assistant</b>, <a href="https://www.nvidia.com/zh-tw/deep-learning-ai/education/" target="_blank">Deep Learning Institute</a>, <a href="https://www.nvidia.com/zh-tw/" target="_blank">NVIDIA Taiwan</a>
+                <span style="float: right">Spring 2018</span>
+
+              </td>
+            </tr>
+
+        </tbody></table>
+        <br><br>
+
+        <!--honors-->
+        <table><tbody>
+          <tr>
+            <td class="all">
+              <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Honor</heading>
+            </td>
+          </tr>
+          <tr>
+            <td class="all">
+
+              <br>
+              <b>Fellowship</b>, <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-north-america/" target="_blank">Qualcomm Innovation Fellowship 2024</a>
+
+            </td>
+          </tr>
+
+      </tbody></table>
+      <br><br>
+
+        <!--boreder-->
+        <table><tbody>
+          <tr>
+            <td style="padding: 0px">
+              <br>
+              <p style="text-align: center;">
+                template from <a href="https://jonbarron.info" target="_blank">jonbarron</a>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
 </html>
