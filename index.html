@@ -13,8 +13,8 @@
   <script>
     function pressBtn(p) {
 
-      var id_btn=["exp-btn", "pub-btn"], class_btn=["fas fa-plus-square", "fas fa-minus-square"];
-      var id_div=["exp-div", "pub-div"], style_div=["height: 300px; overflow: auto;", "height: 400px; overflow: auto;"];
+      var id_btn=["exp-btn", "pub-btn", "apub-btn"], class_btn=["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
+      var id_div=["exp-div", "pub-div", "apub-div"], style_div=["height: 300px; overflow: auto;", "height: 400px; overflow: auto;", "height: 400px; overflow: auto;"];
 
       var btn = document.getElementById(id_btn[p]);
       if(btn.className == class_btn[0]) {
@@ -223,13 +223,13 @@
           <tr>
             <td class="all">
               <heading>
-                <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications in Audio Applications<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(2)" id="pub-btn"></i>
+                <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications in Audio Applications<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(2)" id="apub-btn"></i>
               </heading>
             </td>
           </tr>
         </tbody></table>
         <br>
-        <div style="height: 400px; overflow: auto;" id="pub-div">
+        <div style="height: 400px; overflow: auto;" id="apub-div">
           <table><tbody>
             <tr>
               <td class="pub-avatar">
