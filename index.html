@@ -181,8 +181,8 @@
           <b>Harnessing Heuristic and its Robustness for DRL:</b> 
           In practice, DRL training frequently relies on heuristic rewards to promote survival and exploration in complex environments, 
           primarily due to the limitation of finite sample sizes for each training batch. 
-          These finite sample conditions hinder the empirical feasibility of achieving the ideal expectations typically required by theoretical standards, 
-          such as potential-based reward shaping. 
+          <!-- These finite sample conditions hinder the empirical feasibility of achieving the ideal expectations typically required by theoretical standards, 
+          such as potential-based reward shaping.  -->
           My recent work addresses the exploitation-exploration dilemma under finite sample conditions, 
           enabling more feasible approximations of optimal policies while improving the robustness of heuristic selections with significantly reduced design effort.
           <br><br>
@@ -221,9 +221,16 @@
               </td>
             </tr>
           </tbody></table>
-          <br>
+          <br><br>
           <b>Connecting Entanglement in Perceivability and Decision-Making:</b> 
-              An agent cannot effectively make decisions without perceiving the necessary patterns. While trajectories for policy training are collected by experts using privileged information, but only sensor features (partial observations) are available during deployment, reproducing the same decision-making outcomes becomes challenging due to insufficient patterns in these partial observations. Even if a perception model might converge to a local minimum with similar total loss levels, different error situations can indicate varying degrees of perceivability, significantly impacting decision-making. My earlier work focused on optimizing perception model training to ensure it aligns with both perception and downstream objectives. In addition, I am currently working on a project at the <a href="https://sites.google.com/site/yitingchen0524/hcis-lab">HCIS Lab</a> that investigates how perceivability can be used to weigh action likelihoods in policy learning while minimizing the precision requirements of perception for decision-making.
+          An agent cannot effectively make decisions without perceiving the necessary patterns. 
+          While trajectories for policy training are collected by experts using privileged information, 
+          but only sensor features (partial observations) are available during deployment, 
+          reproducing the same decision-making outcomes becomes challenging due to insufficient patterns in these partial observations. 
+          <!-- Even if a perception model might converge to a local minimum with similar total loss levels, 
+          different error situations can indicate varying degrees of perceivability, significantly impacting decision-making.  -->
+          My earlier work focused on optimizing perception model training to ensure it aligns with both perception and downstream objectives. 
+          In addition, I am currently working on a project at the <a href="https://sites.google.com/site/yitingchen0524/hcis-lab">HCIS Lab</a> that investigates how perceivability can be used to weigh action likelihoods in policy learning while minimizing the precision requirements of perception for decision-making.
           <br><br>
           <table><tbody>
             <tr>
