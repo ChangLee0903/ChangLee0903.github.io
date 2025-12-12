@@ -13,15 +13,16 @@
   <script>
     function pressBtn(p) {
 
-      var id_btn=["exp-btn", "pub-btn", "apub-btn"], class_btn=["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
-      var id_div=["exp-div", "pub-div", "apub-div"], style_div=["height: 300px; overflow: auto;", "height: 400px; overflow: auto;", "height: 400px; overflow: auto;"];
+      var id_btn = ["exp-btn", "pub-btn", "apub-btn"],
+          class_btn = ["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
+      var id_div = ["exp-div", "pub-div", "apub-div"],
+          style_div = ["height: 300px; overflow: auto;", "height: 400px; overflow: auto;", "height: 400px; overflow: auto;"];
 
       var btn = document.getElementById(id_btn[p]);
-      if(btn.className == class_btn[0]) {
+      if (btn.className == class_btn[0]) {
         btn.className = class_btn[1];
         document.getElementById(id_div[p]).style = "";
-      }
-      else {
+      } else {
         btn.className = class_btn[0];
         document.getElementById(id_div[p]).style = style_div[p];
       }
@@ -37,391 +38,396 @@
 </head>
 
 <body>
-  <table style="max-width: 900px;"><tbody>
-    <tr style="padding: 0px;">
-      <td style="padding: 0px;">
+  <table style="max-width: 900px;">
+    <tbody>
+      <tr style="padding: 0px;">
+        <td style="padding: 0px;">
 
-        <!--bio-->
-        <table><tbody>
-          <tr style="padding: 0px;">
-            <td style="padding: 2%; width: 40%; vertical-align: middle;">
+          <!--bio-->
+          <table>
+            <tbody>
+              <tr style="padding: 0px;">
+                <td style="padding: 2%; width: 40%; vertical-align: middle;">
 
-              <p style="text-align: center;">
-                <name>Chi-Chang Lee</name>
-              </p>
+                  <p style="text-align: center;">
+                    <name>Chi-Chang Lee</name>
+                  </p>
 
-              <p>
-                I earned both my Bachelor’s and Master’s degrees in <b><a href="https://homepage.ntu.edu.tw/~ntuesoe/en/Default.html">Engineering Science</a> and <a href="https://www.csie.ntu.edu.tw//?locale=en">Computer Science</a> from National Taiwan University</b>, where I worked closely with <b>Prof. <a href="https://scholar.google.com/citations?hl=en&user=ZO5e5I4AAAAJ">Yu Tsao</a> and Prof. <a href="https://homepage.iis.sinica.edu.tw/pages/whm/index_en.html">Hsin-Min Wang</a></b>. Before 2023, my research primarily centered on <b>machine learning for audio and speech modalities</b>, especially <b>Speech-to-Text systems</b> and task-aware front-end processing for downstream audio applications. I focused on improving <b>robustness to diverse acoustic environments (<a href="https://openreview.net/forum?id=5fvXH49wk2">ICLR'23</a> & <a href="https://arxiv.org/pdf/2311.16604">ASRU'23</a>)</b> and on <b>how such robustness can be continually learned and adapted over time (<a href="https://arxiv.org/pdf/2005.11760" target="_blank">Interspeech'20</a> and <a href="https://arxiv.org/pdf/2206.09058" target="_blank">Interspeech'22</a>)</b>.
-              </br></br>
-                In 2023, I have been honored to begin collaborating with the <b><a href="https://cap.csail.mit.edu/improbable-ai-lab-lab-tour" target="_blank">Improbable AI Lab</a> at MIT CSAIL</b>, led by <b>Prof. <a href="https://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a></b>, and shifted my primary research focus to <b>Embodied AI, particularly Reinforcement Learning (RL)</b>. My current work investigates how, under a <b>finite interaction budget</b>, a robotic agent can learn to <b>distinguish heuristic signals from the true task objective</b> while still <b>optimizing for the real but sparse success outcomes</b>. This collaboration has led to two papers: one on the <b>real-world deployment of locomotion policies (<a href="https://srinathm1359.github.io/data/Maximizing_Quadruped_Velocity_by_Minimizing_Energy.pdf">ICRA'24</a>)</b>, and another on <b>an advanced RL algorithm that achieves consistent gains on 31 robotic tasks (<a href="https://openreview.net/pdf?id=vBGMbFgvsX">NeurIPS'24</a>)</b>.
-            </td>
-
-            <td style="padding: 2%; width: 20%; max-width: 20%; top; padding-top: 80px;">
-              <img src="assests/C.jpg" style="border-radius: 50%" onmouseover="img_hover(this, 'assests/C.jpg');" onmouseout="img_unhover(this, 'assests/C.jpg'); " />
-              <p style="text-align: center;">
-                <a href="mailto:r08922a27@csie.ntu.edu.tw" target="_blank"><i class="fas fa-envelope ai-2x"></i></a>&nbsp;
-                <a href="https://github.com/ChangLee0903" target="_blank"><i class="fab fa-github ai-2x"></i></a>&nbsp;
-                <a href="files/resume.pdf" target="_blank"><i class="ai ai-cv-square ai-2x"></i></a>&nbsp;
-                <a href="https://scholar.google.com/citations?user=r225tRsAAAAJ&hl" target="_blank"><i class="ai ai-google-scholar-square ai-2x"></i></a>&nbsp;
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!--experience-->
-        <table><tbody>
-          <tr>
-            <td class="all">
-              <heading>
-                <i class="fas fa-briefcase"></i>&nbsp;&nbsp;Experience<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(0)" id="exp-btn"></i>
-              </heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <div style="height: 300px; overflow: auto;" id="exp-div">
-          <table><tbody>
-            <tr>
-              <td class="exp-avatar">
-                <img src="imgs/mit.png" />
-              </td>
-
-              <td class="exp-description">
-                <b>Research Collaborator</b>
-                <span style="float: right;">Jul. 2023 – present</span>
-                <br>
-                <a href="https://cap.csail.mit.edu/improbable-ai-lab-lab-tour" target="_blank">Improbable AI Lab at Massachusetts Institute of Technology</a>
-                <br>
-                Advisor: <a href="https://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a>
-              </td>
-            </tr>
-            
-            <tr>
-                <td class="exp-avatar">
-                  <img src="imgs/CITI.jpeg"  />
+                  <p>
+                    I earned both my Bachelor’s and Master’s degrees in
+                    <b><a href="https://homepage.ntu.edu.tw/~ntuesoe/en/Default.html">Engineering Science</a> and
+                      <a href="https://www.csie.ntu.edu.tw//?locale=en">Computer Science</a> from National Taiwan
+                      University</b>, where I worked closely with
+                    <b>Prof. <a href="https://scholar.google.com/citations?hl=en&user=ZO5e5I4AAAAJ">Yu Tsao</a> and Prof.
+                        <a href="https://homepage.iis.sinica.edu.tw/pages/whm/index_en.html">Hsin-Min Wang</a></b>.
+                    Before 2023, my research primarily centered on
+                    <b>machine learning for audio and speech modalities</b>, especially
+                    <b>Speech-to-Text systems</b> and task-aware front-end processing for downstream audio applications.
+                    I focused on improving <b>robustness to diverse acoustic environments
+                      (<a href="https://openreview.net/forum?id=5fvXH49wk2">ICLR'23</a> &
+                      <a href="https://arxiv.org/pdf/2311.16604">ASRU'23</a>)</b> and on
+                    <b>how such robustness can be continually learned and adapted over time
+                      (<a href="https://arxiv.org/pdf/2005.11760" target="_blank">Interspeech'20</a> and
+                      <a href="https://arxiv.org/pdf/2206.09058" target="_blank">Interspeech'22</a>)</b>.
+                    <br><br>
+                    In 2023, I have been honored to begin collaborating with the
+                    <b><a href="https://cap.csail.mit.edu/improbable-ai-lab-lab-tour" target="_blank">Improbable AI Lab</a> at MIT CSAIL</b>,
+                    led by <b>Prof. <a href="https://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a></b>, and shifted my primary research
+                    focus to <b>Embodied AI, particularly Reinforcement Learning (RL)</b>. My current work investigates how,
+                    under a <b>finite interaction budget</b>, a robotic agent can learn to
+                    <b>distinguish heuristic signals from the true task objective</b> while still
+                    <b>optimizing for the real but sparse success outcomes</b>. This collaboration has led to two papers:
+                    one on the <b>real-world deployment of locomotion policies
+                      (<a href="https://srinathm1359.github.io/data/Maximizing_Quadruped_Velocity_by_Minimizing_Energy.pdf">ICRA'24</a>)</b>,
+                    and another on <b>an advanced RL algorithm that achieves consistent gains on 31 robotic tasks
+                      (<a href="https://openreview.net/pdf?id=vBGMbFgvsX">NeurIPS'24</a>)</b>.
+                  </p>
                 </td>
 
-                <td class="exp-description">
-                  <b>Research Assistant</b>
-                  <span style="float: right;">Mar. 2019 – Mar. 2024</span>
-                  <br>
-                  <a href="https://bio-asplab.citi.sinica.edu.tw" target="_blank">Bio-ASP Lab at Academia Sinica CITI, Taiwan</a>
-                  <br>
-                  Advisor: <a href="https://scholar.google.com/citations?hl=en&user=ZO5e5I4AAAAJ">Yu Tsao</a>
+                <td style="padding: 2%; width: 20%; max-width: 20%; top; padding-top: 80px;">
+                  <img src="assests/C.jpg" style="border-radius: 50%"
+                       onmouseover="img_hover(this, 'assests/C.jpg');"
+                       onmouseout="img_unhover(this, 'assests/C.jpg');" />
+                  <p style="text-align: center;">
+                    <a href="mailto:r08922a27@csie.ntu.edu.tw" target="_blank">
+                      <i class="fas fa-envelope ai-2x"></i></a>&nbsp;
+                    <a href="https://github.com/ChangLee0903" target="_blank">
+                      <i class="fab fa-github ai-2x"></i></a>&nbsp;
+                    <a href="files/resume.pdf" target="_blank">
+                      <i class="ai ai-cv-square ai-2x"></i></a>&nbsp;
+                    <a href="https://scholar.google.com/citations?user=r225tRsAAAAJ&hl" target="_blank">
+                      <i class="ai ai-google-scholar-square ai-2x"></i></a>&nbsp;
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!--experience-->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading>
+                    <i class="fas fa-briefcase"></i>&nbsp;&nbsp;Experience
+                    <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(0)" id="exp-btn"></i>
+                  </heading>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div style="height: 300px; overflow: auto;" id="exp-div">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="exp-avatar">
+                    <img src="imgs/mit.png" />
+                  </td>
+
+                  <td class="exp-description">
+                    <b>Research Collaborator</b>
+                    <span style="float: right;">Jul. 2023 – present</span>
+                    <br>
+                    <a href="https://cap.csail.mit.edu/improbable-ai-lab-lab-tour" target="_blank">
+                      Improbable AI Lab at Massachusetts Institute of Technology</a>
+                    <br>
+                    Advisor: <a href="https://people.csail.mit.edu/pulkitag/">Pulkit Agrawal</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="exp-avatar">
+                    <img src="imgs/CITI.jpeg" />
+                  </td>
+
+                  <td class="exp-description">
+                    <b>Research Assistant</b>
+                    <span style="float: right;">Mar. 2019 – Mar. 2024</span>
+                    <br>
+                    <a href="https://bio-asplab.citi.sinica.edu.tw" target="_blank">
+                      Bio-ASP Lab at Academia Sinica CITI, Taiwan</a>
+                    <br>
+                    Advisor:
+                    <a href="https://scholar.google.com/citations?hl=en&user=ZO5e5I4AAAAJ">Yu Tsao</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="exp-avatar">
+                    <img src="imgs/NII.jpeg" />
+                  </td>
+
+                  <td class="exp-description">
+                    <b>Visiting Researcher</b>
+                    <span style="float: right;">Nov. 2022 – Feb. 2023</span>
+                    <br>
+                    <a href="https://nii-yamagishilab.github.io" target="_blank">
+                      Yamagishi Laboratory at National Institute of Informatics, Japan</a>
+                    <br>
+                    Advisor: Prof.
+                    <a href="https://researchmap.jp/read0205283" target="_blank">Junichi Yamagishi</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br><br>
+
+          <!--publications: Robot Learning / Embodied AI-->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading>
+                    <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications in Robot Learning and Embodied AI
+                    <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(1)" id="pub-btn"></i>
+                  </heading>
+                  <br>(∗ indicates equal contribution)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div style="height: 400px; overflow: auto;" id="pub-div">
+            <div style="margin-left: 20px; margin-right: 20px">
+              <b>Optimal robot learning under finite interaction budgets - </b>
+              In practice, RL for robotics often struggles with complex environments because it relies on brittle,
+              hand-engineered dense rewards or assumes unrealistic sampling budgets (e.g., relying on proximal heuristics
+              while the true target is a sparse success outcome). I developed a novel RL framework that optimizes for
+              target success outcomes without requiring (1) infinite sampling assumptions or (2) restrictive reward shaping.
+            </div>
+            <br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/HEPO.gif" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>Going Beyond Heuristics by Imposing Policy Improvement as a Constraint</papertitle>
+                    <br>
+                    <i><u><b>Chi-Chang Lee*</b></u>, Zhang-Wei Hong*, Pulkit Agrawal</i>
+                    <br>
+                    Conference on Neural Information Processing Systems (NeurIPS) 2024
+                    <br>
+                    <a href="https://openreview.net/pdf?id=vBGMbFgvsX" target="_blank">Paper</a> |
+                    <a href="https://openreview.net/forum?id=vBGMbFgvsX&noteId=w9vPHsxyz6" target="_blank">OpenReview</a> |
+                    <a href="https://recorder-v3.slideslive.com/#/share?share=98021&s=e1380d36-4341-47c3-a8f4-a688ffb84817" target="_blank">Video</a> |
+                    <a href="https://github.com/Improbable-AI/hepo" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/avatar_eipo_icra.gif" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>Maximizing Velocity by Minimizing Energy</papertitle>
+                    <br>
+                    <i>Srinath Mahankali*, <u><b>Chi-Chang Lee*</b></u>, Gabriel B. Margolis, Zhang-Wei Hong,
+                      Pulkit Agrawal</i>
+                    <br>
+                    International Conference on Robotics and Automation (ICRA), 2024
+                    <br>
+                    <a href="https://srinathm1359.github.io/data/Maximizing_Quadruped_Velocity_by_Minimizing_Energy.pdf" target="_blank">Paper</a> |
+                    <a href="https://srinathm1359.github.io/eipo-locomotion" target="_blank">Website</a> |
+                    <a href="https://github.com/Improbable-AI/walk-these-ways" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br><br>
+
+          <!--publications: Machine Learning for Audio Modalities-->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading>
+                    <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications in Machine Learning for Audio Modalities
+                    <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(2)" id="apub-btn"></i>
+                  </heading>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div style="height: 400px; overflow: auto;" id="apub-div">
+            <div style="margin-left: 20px; margin-right: 20px">
+              <b>Machine Learning for Audio Modalities - </b>
+              My previous research mainly focused on “normalizing” speech from diverse acoustic conditions for downstream
+              tasks such as Speech-to-Text and Speaker Identification. My related publications cover two main directions:
+              (1) Leveraging multiple label modalities for auxiliary learning and data reuse, by combining synthetic and
+              real-world audio, for example using pairs of noisy and clean speech (synthetic) and pairs of noisy speech and
+              text labels (real-world) to improve robustness.
+              (2) Fast adaptation and continual learning for acoustic normalization in order to mitigate out-of-domain degradation.
+              Given the complexity of speech and acoustic environments, it is unrealistic to assume that audio models will
+              generalize sufficiently on their own, so my work focuses on how to automatically acquire informative data and
+              rapidly recalibrate these models.
+            </div>
+            <br><br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/D4AM.png" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>D4AM: A General Denoising Framework for Downstream Acoustic Models</papertitle>
+                    <br>
+                    <i><u><b>Chi-Chang Lee</b></u>, Yu Tsao, Hsin-Min Wang, Chu-Song Chen</i>
+                    <br>
+                    International Conference on Learning Representations (ICLR), 2023
+                    <br>
+                    <a href="https://openreview.net/forum?id=5fvXH49wk2" target="_blank">Paper</a> |
+                    <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/lc4sv.png" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>LC4SV: A Denoising Framework Learning to Compensate for Unseen Speaker Verification Models</papertitle>
+                    <br>
+                    <i><u><b>Chi-Chang Lee</b></u>, Hong-Wei Chen, Chu-Song Chen, Hsin-Min Wang, Tsung-Te Liu, Yu Tsao</i>
+                    <br>
+                    IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 2023
+                    <br>
+                    <a href="https://arxiv.org/pdf/2311.16604" target="_blank">Paper</a> |
+                    <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/nastar.png" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>NASTAR: Noise Adaptive Speech Enhancement with Target-Conditional Resampling</papertitle>
+                    <br>
+                    <i><u><b>Chi-Chang Lee</b></u>, Cheng-Hung Hu, Yu-Chen Lin, Chu-Song Chen, Hsin-Min Wang, Yu Tsao</i>
+                    <br>
+                    INTERSPEECH, 2022
+                    <br>
+                    <a href="https://arxiv.org/pdf/2206.09058" target="_blank">Paper</a> |
+                    <a href="https://changlee0903.github.io/NASTAR-demo/" target="_blank">Website</a> |
+                    <a href="https://github.com/ChangLee0903/NASTAR" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pub-avatar">
+                    <img src="imgs/seril.jpg" />
+                  </td>
+                  <td class="pub-description">
+                    <papertitle>SERIL: Noise adaptive speech enhancement using regularization-based incremental learning</papertitle>
+                    <br>
+                    <i><u><b>Chi-Chang Lee</b></u>, Yu-Chen Lin, Hsuan-Tien Lin, Hsin-Min Wang, Yu Tsao</i>
+                    <br>
+                    INTERSPEECH, 2020
+                    <br>
+                    <a href="https://arxiv.org/pdf/2005.11760" target="_blank">Paper</a> |
+                    <a href=" https://github.com/ChangLee0903/SERIL" target="_blank">Code</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br><br>
+
+          <!--teaching-->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Teaching</heading>
                 </td>
               </tr>
               <tr>
-                <td class="exp-avatar">
-                  <img src="imgs/NII.jpeg"  />
-                </td>
-
-                <td class="exp-description">
-                  <b>Visiting Researcher</b>
-                  <span style="float: right;">Nov. 2022 – Feb. 2023</span>
+                <td class="all">
                   <br>
-                  <a href="https://nii-yamagishilab.github.io" target="_blank">Yamagishi Laboratory at National Institute of Informatics, Japan</a>
-                  <br>
-                  Advisor: Prof. <a href="https://researchmap.jp/read0205283" target="_blank">Junichi Yamagishi</a>
+                  <b>Teaching Assistant</b>,
+                  <a href="https://ntueeml.github.io/ml-website/" target="_blank">Machine Learning</a>,
+                  National Taiwan University, Taiwan
+                  <span style="float: right">2021 Fall</span>
                 </td>
               </tr>
-          </tbody></table>
-        </div>
-        <br><br>
-        
-        <!--publications-->
-        <table><tbody>
-          <tr>
-            <td class="all">
-              <heading>
-                <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(1)" id="pub-btn"></i>
-              </heading>
-              <br>(∗ indicates equal contribution)
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <div style="height: 400px; overflow: auto;" id="pub-div">
-          <div style="margin-left: 20px;margin-right: 20px">
-            <b>Optimal robot learning under finite interaction budgets - </b> 
-            In practice, RL for robotics often struggles with complex environments because it relies on brittle, hand-engineered dense rewards or assumes unrealistic sampling budgets (e.g., relying on proximal heuristics while the true target is a sparse success outcome). I developed a novel RL framework that optimizes for target success outcomes without requiring (1) infinite sampling assumptions or (2) restrictive reward shaping.
-          </div>
-          <br>
-          <!-- <br> -->
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/HEPO.gif" />
-              </td>
-              <td class="pub-description">
-                <papertitle>Going Beyond Heuristics by Imposing Policy Improvement as a Constraint</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee*</b></u>, Zhang-Wei Hong*, Pulkit Agrawal</I>             
-                <br>
-                Conference on Neural Information Processing Systems (NeurIPS) 2024
-                <br>
-                  <a href="https://openreview.net/pdf?id=vBGMbFgvsX" target="_blank">Paper</a> |
-                  <a href="https://openreview.net/forum?id=vBGMbFgvsX&noteId=w9vPHsxyz6" target="_blank">OpenReview</a> | 
-                  <a href="https://recorder-v3.slideslive.com/#/share?share=98021&s=e1380d36-4341-47c3-a8f4-a688ffb84817" target="_blank">Video</a> |
-                  <a href="https://github.com/Improbable-AI/hepo" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/avatar_eipo_icra.gif" />
-              </td>
-              <td class="pub-description">
-                <papertitle>Maximizing Velocity by Minimizing Energy</papertitle>
-                <br>
-                <I>Srinath Mahankali*, <u><b>Chi-Chang Lee*</b></u>, Gabriel B. Margolis, Zhang-Wei Hong, Pulkit Agrawal</I>             
-                <br>
-                  International Conference on Robotics and Automation (ICRA), 2024
-                <br>
-                  <a href="https://srinathm1359.github.io/data/Maximizing_Quadruped_Velocity_by_Minimizing_Energy.pdf" target="_blank">Paper</a> |
-                  <a href="https://srinathm1359.github.io/eipo-locomotion" target="_blank">Website</a> |
-                  <a href="https://github.com/Improbable-AI/walk-these-ways" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
+
+              <tr>
+                <td class="all">
+                  <br>
+                  <b>Teaching Assistant</b>,
+                  <a href="https://djj.ee.ntu.edu.tw/TFW.htm" target="_blank">Time Frequency Analysis and Wavelet Transforms</a>,
+                  National Taiwan University, Taiwan
+                  <span style="float: right">2018 Fall</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <br><br>
 
-        <!--publications-->
-        <div style="margin-left: 20px; margin-right: 20px"><b>Machine Learning for Audio Modalities - </b> 
-          My previous research mainly focused on “normalizing” speech from diverse acoustic conditions for downstream tasks such as Speech-to-Text and Speaker Identification. My related publications cover two main directions:
-  (1) Leveraging multiple label modalities for auxiliary learning and data reuse, by combining synthetic and real-world audio, for example using pairs of noisy and clean speech (synthetic) and pairs of noisy speech and text labels (real-world) to improve robustness.
-  (2) Fast adaptation and continual learning for acoustic normalization in order to mitigate out-of-domain degradation. Given the complexity of speech and acoustic environments, it is unrealistic to assume that audio models will generalize sufficiently on their own, so my work focuses on how to automatically acquire informative data and rapidly recalibrate these models.
-        </div> 
-          <br>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/D4AM.png" />
-              </td>
-              <td class="pub-description">
-                <papertitle>D4AM: A General Denoising Framework for Downstream Acoustic Models</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Yu Tsao, Hsin-Min Wang, Chu-Song Chen</I>                     
-                <br>
-                  International Conference on Learning Representations (ICLR), 2023
-                <br>
-                  <a href="https://openreview.net/forum?id=5fvXH49wk2" target="_blank">Paper</a> |
-                  <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/lc4sv.png" />
-              </td>
-              <td class="pub-description">
-                <papertitle>LC4SV: A Denoising Framework Learning to Compensate for Unseen Speaker Verification Models</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Hong-Wei Chen, Chu-Song Chen, Hsin-Min Wang, Tsung-Te Liu, Yu Tsao</I>             
-                <br>
-                IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 2023
-                <br>
-                <a href="https://arxiv.org/pdf/2311.16604" target="_blank">Paper</a> |
-                  <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/nastar.png"/>
-              </td>
-              <td class="pub-description">
-                <papertitle>NASTAR: Noise Adaptive Speech Enhancement with Target-Conditional Resampling</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Cheng-Hung Hu, Yu-Chen Lin, Chu-Song Chen, Hsin-Min Wang, Yu Tsao</I>             
-                <br>
-                  INTERSPEECH, 2022
-                <br>
-                  <a href="https://arxiv.org/pdf/2206.09058" target="_blank">Paper</a> |
-                  <a href="https://changlee0903.github.io/NASTAR-demo/" target="_blank">Website</a> |
-                  <a href="https://github.com/ChangLee0903/NASTAR" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/seril.jpg" />
-              </td>
-              <td class="pub-description">
-                <papertitle>SERIL: Noise adaptive speech enhancement using regularization-based incremental learning</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Yu-Chen Lin, Hsuan-Tien Lin, Hsin-Min Wang, Yu Tsao</I>                     
-                <br>
-                INTERSPEECH, 2020
-                <br>
-                  <a href="https://arxiv.org/pdf/2005.11760" target="_blank">Paper</a> |
-                  <a href=" https://github.com/ChangLee0903/SERIL" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          </div>
-        <div style="margin-left: 20px; margin-right: 20px">
-        </div>
-        </div>
-        <br><br>
-        
-        <!-- <table><tbody>
-          <tr>
-            <td class="all">
-              <heading>
-                <i class="far fa-file-alt"></i>&nbsp;&nbsp;Publications in Machine Learning for Audio Modalities<i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(2)" id="apub-btn"></i>
-              </heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <div style="height: 400px; overflow: auto;" id="apub-div">
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/D4AM.png" />
-              </td>
-              <td class="pub-description">
-                <papertitle>D4AM: A General Denoising Framework for Downstream Acoustic Models</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Yu Tsao, Hsin-Min Wang, Chu-Song Chen</I>                     
-                <br>
-                  International Conference on Learning Representations (ICLR), 2023
-                <br>
-                  <a href="https://openreview.net/forum?id=5fvXH49wk2" target="_blank">Paper</a> |
-                  <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/lc4sv.png" />
-              </td>
-              <td class="pub-description">
-                <papertitle>LC4SV: A Denoising Framework Learning to Compensate for Unseen Speaker Verification Models</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Hong-Wei Chen, Chu-Song Chen, Hsin-Min Wang, Tsung-Te Liu, Yu Tsao</I>             
-                <br>
-                IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), 2023
-                <br>
-                <a href="https://arxiv.org/pdf/2311.16604" target="_blank">Paper</a> |
-                  <a href="https://github.com/ChangLee0903/D4AM" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/nastar.png"/>
-              </td>
-              <td class="pub-description">
-                <papertitle>NASTAR: Noise Adaptive Speech Enhancement with Target-Conditional Resampling</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Cheng-Hung Hu, Yu-Chen Lin, Chu-Song Chen, Hsin-Min Wang, Yu Tsao</I>             
-                <br>
-                  INTERSPEECH, 2022
-                <br>
-                  <a href="https://arxiv.org/pdf/2206.09058" target="_blank">Paper</a> |
-                  <a href="https://changlee0903.github.io/NASTAR-demo/" target="_blank">Website</a> |
-                  <a href="https://github.com/ChangLee0903/NASTAR" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          <br>
-          <table><tbody>
-            <tr>
-              <td class="pub-avatar">
-                <img src="imgs/seril.jpg" />
-              </td>
-              <td class="pub-description">
-                <papertitle>SERIL: Noise adaptive speech enhancement using regularization-based incremental learning</papertitle>
-                <br>
-                <I><u><b>Chi-Chang Lee</b></u>, Yu-Chen Lin, Hsuan-Tien Lin, Hsin-Min Wang, Yu Tsao</I>                     
-                <br>
-                INTERSPEECH, 2020
-                <br>
-                  <a href="https://arxiv.org/pdf/2005.11760" target="_blank">Paper</a> |
-                  <a href=" https://github.com/ChangLee0903/SERIL" target="_blank">Code</a>
-              </td>
-            </tr>
-          </tbody></table>
-          </div> -->
-        <br><br>
+          <!--honors-->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Honor</heading>
+                </td>
+              </tr>
+              <tr>
+                <td class="all">
+                  <br>
+                  <b>Second Place</b>,
+                  <a href="https://www.iccad-contest.org/2019/" target="_blank">IC/CAD Contest 2019</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br>
 
-        <!--teaching-->
-        <table><tbody>
-            <tr>
-              <td class="all">
-                <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Teaching</heading>
-              </td>
-            </tr>
-            <tr>
-              <td class="all">
+          <!--border-->
+          <table>
+            <tbody>
+              <tr>
+                <td style="padding: 0px">
+                  <br>
+                  <p style="text-align: center;">
+                    template from <a href="https://jonbarron.info" target="_blank">jonbarron</a>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-                <br>
-                <b>Teaching Assistant</b>, <a href="https://ntueeml.github.io/ml-website/" target="_blank">Machine Learning</a>, National Taiwan University, Taiwan
-                <span style="float: right">2021 Fall</span>
-
-              </td>
-            </tr>
-
-            <tr>
-              <td class="all">
-
-                <br>
-                <b>Teaching Assistant</b>, <a href="https://djj.ee.ntu.edu.tw/TFW.htm" target="_blank">Time Frequency Analysis and Wavelet Transforms</a>, National Taiwan University, Taiwan
-                <span style="float: right">2018 Fall</span>
-
-              </td>
-            </tr>
-
-        </tbody></table>
-        <br><br>
-
-        <!--honors-->
-        <table><tbody>
-          <tr>
-            <td class="all">
-              <heading><i class="fas fa-chalkboard-teacher"></i>&nbsp;&nbsp;Honor</heading>
-            </td>
-          </tr>
-          <tr>
-            <td class="all">
-
-              <br>
-              <b>Second Place</b>, <a href="https://www.iccad-contest.org/2019/" target="_blank">IC/CAD Contest 2019</a>
-
-            </td>
-          </tr>
-
-      </tbody></table>
-      <br><br>
-
-        <!--boreder-->
-        <table><tbody>
-          <tr>
-            <td style="padding: 0px">
-              <br>
-              <p style="text-align: center;">
-                template from <a href="https://jonbarron.info" target="_blank">jonbarron</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-      </td>
-    </tr>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </body>
 
