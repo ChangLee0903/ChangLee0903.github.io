@@ -11,30 +11,29 @@
   <script src="assests/fontawesome.js"></script>
 
   <script>
-    function pressBtn(p) {
+  function pressBtn(p) {
 
-      var id_btn = ["exp-btn", "pub-btn", "apub-btn"],
-          class_btn = ["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
-      var id_div = ["exp-div", "pub-div", "apub-div"],
-          style_div = ["height: 300px; overflow: auto;", "height: 400px; overflow: auto;", "height: 400px; overflow: auto;", "height: 400px; overflow: auto;"];
+    var id_btn = ["exp-btn", "pub-btn", "apub-btn", "side-btn"],
+        class_btn = ["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
 
-      var btn = document.getElementById(id_btn[p]);
-      if (btn.className == class_btn[0]) {
-        btn.className = class_btn[1];
-        document.getElementById(id_div[p]).style = "";
-      } else {
-        btn.className = class_btn[0];
-        document.getElementById(id_div[p]).style = style_div[p];
-      }
-    }
+    var id_div = ["exp-div", "pub-div", "apub-div", "side-div"],
+        style_div = [
+          "height: 300px; overflow: auto;",
+          "height: 400px; overflow: auto;",
+          "height: 400px; overflow: auto;",
+          "display: none;"   // side project 收合時直接隱藏
+        ];
 
-    function img_hover(e, f) {
-      e.setAttribute("src", f);
+    var btn = document.getElementById(id_btn[p]);
+    if (btn.className == class_btn[0]) {
+      btn.className = class_btn[1];
+      document.getElementById(id_div[p]).style = "";     // 展開：移除 display:none
+    } else {
+      btn.className = class_btn[0];
+      document.getElementById(id_div[p]).style = style_div[p]; // 收合：套回 display:none
     }
-    function img_unhover(e, f) {
-      e.setAttribute("src", f);
-    }
-  </script>
+  }
+</script>
 </head>
 
 <body>
@@ -360,7 +359,7 @@
             </table>
             </div>
           <br><br>
-            <table>
+<table>
   <tbody>
     <tr>
       <td class="all">
