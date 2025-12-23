@@ -358,6 +358,38 @@
                 </tr>
               </tbody>
             </table>
+            <br>
+            <table>
+  <tbody>
+    <tr>
+      <td class="all">
+        <heading>
+          <i class="fas fa-rocket"></i>&nbsp;&nbsp;14-day side project: LLM In-Context Bayesian Optimization
+          <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i>
+        </heading>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<div style="height: 220px; overflow: auto;" id="side-div">
+  <div style="margin-left: 20px; margin-right: 20px">
+    <b>LLM ICL for BO with a reference policy - </b>
+    This project aims to expand in-context learning for Bayesian optimization by introducing a
+    <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
+    (1) acquiring improvement / convergence support via constrained updates relative to the reference policy, and
+    (2) replacing domain-specific task descriptions (e.g., dataset/model info in hyperparameter tuning) with
+    <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
+    improving scalability to unseen BO tasks.
+    <!-- Optional: add links if you have them
+    <br><br>
+    <a href="files/BO-SCULPT-3.pdf" target="_blank">Writeup</a> |
+    <a href="https://github.com/xxx" target="_blank">Code</a>
+    -->
+  </div>
+</div>
+<br><br>
           </div>
           <br><br>
 
@@ -429,37 +461,6 @@
       </tr>
     </tbody>
   </table>
-  <table>
-  <tbody>
-    <tr>
-      <td class="all">
-        <heading>
-          <i class="fas fa-rocket"></i>&nbsp;&nbsp;14-day side project: LLM In-Context Bayesian Optimization
-          <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i>
-        </heading>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<br>
-
-<div style="height: 220px; overflow: auto;" id="side-div">
-  <div style="margin-left: 20px; margin-right: 20px">
-    <b>LLM ICL for BO with a reference policy - </b>
-    This project aims to expand in-context learning for Bayesian optimization by introducing a
-    <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
-    (1) acquiring improvement / convergence support via constrained updates relative to the reference policy, and
-    (2) replacing domain-specific task descriptions (e.g., dataset/model info in hyperparameter tuning) with
-    <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
-    improving scalability to unseen BO tasks.
-    <!-- Optional: add links if you have them
-    <br><br>
-    <a href="files/BO-SCULPT-3.pdf" target="_blank">Writeup</a> |
-    <a href="https://github.com/xxx" target="_blank">Code</a>
-    -->
-  </div>
-</div>
-<br><br>
 </body>
 
 </html>
