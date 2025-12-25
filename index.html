@@ -10,30 +10,90 @@
   <link rel="stylesheet" type="text/css" href="assests/academicons.min.css">
   <script src="assests/fontawesome.js"></script>
 
-  <script>
-  function pressBtn(p) {
-
-    var id_btn = ["exp-btn", "pub-btn", "apub-btn", "side-btn"],
-        class_btn = ["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
-
-    var id_div = ["exp-div", "pub-div", "apub-div", "side-div"],
-        style_div = [
-          "height: 300px; overflow: auto;",
-          "height: 400px; overflow: auto;",
-          "height: 400px; overflow: auto;",
-          "display: none;"   // side project 收合時直接隱藏
-        ];
-
-    var btn = document.getElementById(id_btn[p]);
-    if (btn.className == class_btn[0]) {
-      btn.className = class_btn[1];
-      document.getElementById(id_div[p]).style = "";     // 展開：移除 display:none
-    } else {
-      btn.className = class_btn[0];
-      document.getElementById(id_div[p]).style = style_div[p]; // 收合：套回 display:none
+  <!-- Side-projects: publication-like layout + centered thumbnails + scrollbox -->
+  <style>
+    /* Scroll container (like publications) */
+    .scrollbox {
+      height: 450px;
+      overflow: auto;
     }
-  }
-</script>
+
+    /* Inner padding to match your other sections */
+    .section-inner {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    /* Publication-like row (thumbnail left, text right) */
+    .pub-item {
+      display: flex;
+      align-items: center;      /* vertical-center thumbnail vs text */
+      gap: 18px;
+      padding: 12px 0;
+    }
+
+    .pub-item + .pub-item {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .pub-thumb {
+      flex: 0 0 340px;          /* fixed column like pub-avatar */
+      max-width: 340px;
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .pub-text {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .pub-links a {
+      text-decoration: none;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 900px) {
+      .pub-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .pub-thumb {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    function pressBtn(p) {
+
+      var id_btn = ["exp-btn", "pub-btn", "apub-btn", "side-btn"],
+          class_btn = ["fas fa-plus-square", "fas fa-minus-square", "fas fa-minus-square"];
+
+      var id_div = ["exp-div", "pub-div", "apub-div", "side-div"],
+          style_div = [
+            "height: 300px; overflow: auto;",
+            "height: 400px; overflow: auto;",
+            "height: 400px; overflow: auto;",
+            "height: 450px; overflow: auto;"   // side project：收合時維持固定高度 + 卷軸
+          ];
+
+      var btn = document.getElementById(id_btn[p]);
+      if (btn.className == class_btn[0]) {
+        btn.className = class_btn[1];
+        document.getElementById(id_div[p]).style = "";               // 展開：移除固定高度（全展開）
+      } else {
+        btn.className = class_btn[0];
+        document.getElementById(id_div[p]).style = style_div[p];     // 收合：套回固定高度（可卷軸）
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -359,69 +419,69 @@
             </table>
             </div>
           <br><br>
-<table>
-  <tbody>
-    <tr>
-      <td class="all">
-        <heading>
-          <i class="fas fa-rocket"></i>&nbsp;&nbsp;Updated VLM/LLM side projects in 2025
-          <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i>
-        </heading>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<br>
 
-<div id="side-div" style="overflow: auto;">
-  <div style="margin-left: 20px; margin-right: 20px">
+          <!-- side projects -->
+          <table>
+            <tbody>
+              <tr>
+                <td class="all">
+                  <heading>
+                    <i class="fas fa-rocket"></i>&nbsp;&nbsp;Updated VLM/LLM side projects in 2025
+                    <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i>
+                  </heading>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
 
-    <table>
-      <tbody>
-        <tr>
-          <td class="pub-avatar" style="vertical-align: top;">
-            <img src="imgs/bo_sculpt.png" style="width: 100%; max-width: 480px; border-radius: 10px;" />
-          </td>
+          <!-- Default collapsed state: fixed height + scroll (like publications) -->
+          <div id="side-div" class="scrollbox">
+            <div class="section-inner">
 
-          <td class="pub-description" style="vertical-align: top;">
-            <papertitle>In-Context Bayesian Optimization incorporating improvement constraints</papertitle>
-            This is a 14-day side project in 2025 that aims to expand in-context learning for Bayesian optimization by introducing a
-            <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
-            (1) <b>acquiring improvement / convergence support</b> via constrained updates relative to the reference policy, and
-            (2) <b>replacing domain-specific task descriptions</b> (e.g., dataset/model info in hyperparameter tuning) with
-            <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
-            improving scalability to unseen BO tasks.
-            <br>
-            <a href="files/BO-SCULPT-3.pdf" target="_blank">Paper</a> |
-            <a href="https://github.com/ChangLee0903/BO-SCULPT" target="_blank">Code</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              <div class="pub-item">
+                <div class="pub-thumb">
+                  <img src="imgs/bo_sculpt.png" alt="BO-SCULPT" />
+                </div>
+                <div class="pub-text">
+                  <papertitle>In-Context Bayesian Optimization incorporating improvement constraints</papertitle>
+                  <br>
+                  This is a 14-day side project in 2025 that aims to expand in-context learning for Bayesian optimization by introducing a
+                  <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
+                  (1) <b>acquiring improvement / convergence support</b> via constrained updates relative to the reference policy, and
+                  (2) <b>replacing domain-specific task descriptions</b> (e.g., dataset/model info in hyperparameter tuning) with
+                  <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
+                  improving scalability to unseen BO tasks.
+                  <div class="pub-links" style="margin-top: 6px;">
+                    <a href="files/BO-SCULPT-3.pdf" target="_blank">Paper</a> |
+                    <a href="https://github.com/ChangLee0903/BO-SCULPT" target="_blank">Code</a>
+                  </div>
+                </div>
+              </div>
 
-    <br><br>
+              <div class="pub-item">
+                <div class="pub-thumb">
+                  <img src="imgs/teapot_extension_ablation_1x3.png" alt="Text-to-Appearance Inverse Rendering" />
+                </div>
+                <div class="pub-text">
+                  <papertitle>Text-to-Appearance Inverse Rendering with Vision–Language Feedback</papertitle>
+                  <br>
+                  We study <b>unpaired text-to-appearance inverse rendering</b>, where a <b>differentiable renderer</b> is optimized using <b>only text prompts</b>, without any <b>reference images</b>.
+                  Since direct <b>CLIP-based optimization</b> from text is often <b>vague and under-constrained</b>, we introduce <b>vision–language feedback</b> as an <b>optimization confiner</b>.
+                  The <b>VLM</b> augments <b>ambiguous textual descriptions</b> into <b>concrete, parameter-aware instructions</b> and determines <b>which scene parameters should be updated</b>,
+                  while simultaneously <b>tightening feasible ranges for all parameters</b>. This guidance <b>stabilizes optimization</b> and improves <b>prompt adherence</b> and <b>visual clarity</b>
+                  compared to <b>naive CLIP-only methods</b>.
+                  <div class="pub-links" style="margin-top: 6px;">
+                    <a href="files/Confined_Vibe_Optimization__Closed_Loop_Text_to_Appearance_Inverse_Rendering_with_Vision_Language_Feedback.pdf" target="_blank">Paper</a> |
+                    <a href="https://github.com/ChangLee0903/Vibe-Rendering.git" target="_blank">Code</a>
+                  </div>
+                </div>
+              </div>
 
-    <table>
-      <tbody>
-        <tr>
-          <td class="pub-avatar" style="vertical-align: top;">
-            <img src="imgs/teapot_extension_ablation_1x3.png" style="width: 100%; max-width: 480px; border-radius: 10px;" />
-          </td>
+            </div>
+          </div>
 
-          <td class="pub-description" style="vertical-align: top;">
-            <papertitle>Text-to-Appearance Inverse Rendering with Vision–Language Feedback</papertitle>
-            We study <b>unpaired text-to-appearance inverse rendering</b>, where a <b>differentiable renderer</b> is optimized using <b>only text prompts</b>, without any <b>reference images</b>. Since direct <b>CLIP-based optimization</b> from text is often <b>vague and under-constrained</b>, we introduce <b>vision–language feedback</b> as an <b>optimization confiner</b>. The <b>VLM</b> augments <b>ambiguous textual descriptions</b> into <b>concrete, parameter-aware instructions</b> and determines <b>which scene parameters should be updated</b>, while simultaneously <b>tightening feasible ranges for all parameters</b>. This guidance <b>stabilizes optimization</b> and improves <b>prompt adherence</b> and <b>visual clarity</b> compared to <b>naive CLIP-only methods</b>.
-            <br>
-            <a href="files/Confined_Vibe_Optimization__Closed_Loop_Text_to_Appearance_Inverse_Rendering_with_Vision_Language_Feedback.pdf" target="_blank">Paper</a> |
-            <a href="https://github.com/ChangLee0903/Vibe-Rendering.git" target="_blank">Code</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<br><br>
+          <br><br>
 
           <!--teaching-->
           <table>
