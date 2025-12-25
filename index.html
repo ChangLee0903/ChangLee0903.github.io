@@ -364,8 +364,8 @@
     <tr>
       <td class="all">
         <heading>
-          <i class="fas fa-rocket"></i>&nbsp;&nbsp;LLM side project in 2025: In-Context Bayesian Optimization incorporating improvement constraints
-          <!-- <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i> -->
+          <i class="fas fa-rocket"></i>&nbsp;&nbsp;Updated VLM/LLM side projects in 2025
+          <i class="fas fa-plus-square" style="float: right;" onclick="pressBtn(3)" id="side-btn"></i>
         </heading>
       </td>
     </tr>
@@ -373,7 +373,7 @@
 </table>
 <br>
 
-<div id="side-div">
+<div id="side-div" style="overflow: auto;">
   <div style="margin-left: 20px; margin-right: 20px">
 
     <table>
@@ -384,10 +384,11 @@
           </td>
 
           <td class="pub-description" style="vertical-align: top;">
+            <papertitle>In-Context Bayesian Optimization incorporating improvement constraints</papertitle>
             This is a 14-day side project in 2025 that aims to expand in-context learning for Bayesian optimization by introducing a
             <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
-            (1) acquiring improvement / convergence support via constrained updates relative to the reference policy, and
-            (2) replacing domain-specific task descriptions (e.g., dataset/model info in hyperparameter tuning) with
+            (1) <b>acquiring improvement / convergence support</b> via constrained updates relative to the reference policy, and
+            (2) <b>replacing domain-specific task descriptions</b> (e.g., dataset/model info in hyperparameter tuning) with
             <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
             improving scalability to unseen BO tasks.
             <br>
@@ -398,6 +399,25 @@
       </tbody>
     </table>
 
+    <br><br>
+
+    <table>
+      <tbody>
+        <tr>
+          <td class="pub-avatar" style="vertical-align: top;">
+            <img src="imgs/teapot_extension_ablation_1x3.png" style="width: 100%; max-width: 480px; border-radius: 10px;" />
+          </td>
+
+          <td class="pub-description" style="vertical-align: top;">
+            <papertitle>Text-to-Appearance Inverse Rendering with Vision–Language Feedback</papertitle>
+            We study <b>unpaired text-to-appearance inverse rendering</b>, where a <b>differentiable renderer</b> is optimized using <b>only text prompts</b>, without any <b>reference images</b>. Since direct <b>CLIP-based optimization</b> from text is often <b>vague and under-constrained</b>, we introduce <b>vision–language feedback</b> as an <b>optimization confiner</b>. The <b>VLM</b> augments <b>ambiguous textual descriptions</b> into <b>concrete, parameter-aware instructions</b> and determines <b>which scene parameters should be updated</b>, while simultaneously <b>tightening feasible ranges for all parameters</b>. This guidance <b>stabilizes optimization</b> and improves <b>prompt adherence</b> and <b>visual clarity</b> compared to <b>naive CLIP-only methods</b>.
+            <br>
+            <a href="files/Confined_Vibe_Optimization__Closed_Loop_Text_to_Appearance_Inverse_Rendering_with_Vision_Language_Feedback.pdf" target="_blank">Paper</a> |
+            <a href="https://github.com/ChangLee0903/Vibe-Rendering.git" target="_blank">Code</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
