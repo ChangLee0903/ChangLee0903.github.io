@@ -124,6 +124,13 @@ img {
   max-width: 100%;
 }
 
+.nice-link {
+  color: #4f8dff;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 6px; /* controls the “gap” */
+}
+
 hr {
   display: block;
 
