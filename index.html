@@ -83,13 +83,15 @@
                        onmouseover="img_hover(this, 'assests/C.jpg');"
                        onmouseout="img_unhover(this, 'assests/C.jpg');" />
                   <p style="text-align: center;">
-                    <a href="mailto:r08922a27@csie.ntu.edu.tw" target="_blank">
+                    <a href="mailto:changlee.umd.edu" target="_blank">
                       <i class="fas fa-envelope ai-2x"></i></a>&nbsp;
                     <a href="https://github.com/ChangLee0903" target="_blank">
                       <i class="fab fa-github ai-2x"></i></a>&nbsp;
                     <a href="files/resume.pdf" target="_blank">
                       <i class="ai ai-cv-square ai-2x"></i></a>&nbsp;
-                    <a href="https://scholar.google.com/citations?user=r225tRsAAAAJ&hl" target="_blank">
+                    <a href="https://www.linkedin.com/in/chi-chang-lee-1901002a9/" target="_blank">
+                      <i class="fab fa-linkedin ai-2x"></i></a>&nbsp;
+                      <a href="https://scholar.google.com/citations?user=r225tRsAAAAJ&hl" target="_blank">
                       <i class="ai ai-google-scholar-square ai-2x"></i></a>&nbsp;
                   </p>
                 </td>
@@ -189,7 +191,7 @@
               In practice, RL for robotics often struggles with complex environments because it relies on brittle,
               hand-engineered dense rewards or assumes unrealistic sampling budgets (e.g., relying on proximal heuristics
               while the true target is a sparse success outcome). I developed a novel RL framework that optimizes for
-              target success outcomes without requiring (1) infinite sampling assumptions or (2) restrictive reward shaping. 
+              target success outcomes without requiring (1) <u>infinite sampling assumptions</u> or (2) <u>restrictive reward shaping</u>. 
             </div>
             <br>
 
@@ -259,10 +261,10 @@
               <b>Machine Learning for Audio Modalities - </b>
               My previous research mainly focused on “normalizing” speech from diverse acoustic conditions for downstream
               tasks such as Speech-to-Text and Speaker Identification. My related publications cover two main directions:
-              (1) Leveraging multiple label modalities for auxiliary learning and data reuse, by combining synthetic and
+              (1) <u>Leveraging multiple label modalities for auxiliary learning and data reuse</u>, by combining synthetic and
               real-world audio, for example using pairs of noisy and clean speech (synthetic) and pairs of noisy speech and
               text labels (real-world) to improve robustness.
-              (2) Fast adaptation and continual learning for acoustic normalization in order to mitigate out-of-domain degradation.
+              (2) <u>Fast adaptation and continual learning for acoustic normalization in order to mitigate out-of-domain degradation</u>.
               Given the complexity of speech and acoustic environments, it is unrealistic to assume that audio models will
               generalize sufficiently on their own, so my work focuses on how to automatically acquire informative data and
               rapidly recalibrate these models.
@@ -389,10 +391,10 @@
           <td class="pub-description" style="vertical-align: middle;">
             <papertitle>In-Context Bayesian Optimization incorporating improvement constraints</papertitle> <br><br>
             This is a 14-day side project in 2025 that aims to expand in-context learning for Bayesian optimization by introducing a
-            <b>reference policy</b> and a <b>policy-improvement</b> view. I target two goals:
-            (1) <b>acquiring improvement / convergence support</b> via constrained updates relative to the reference policy, and
-            (2) <b>replacing domain-specific task descriptions</b> (e.g., dataset/model info in hyperparameter tuning) with
-            <b>task-agnostic statistical signals</b> produced by the reference policy (e.g., mean/uncertainty summaries),
+            <u>reference policy</u> and a <u>policy-improvement</u> view. I target two goals:
+            (1) <u>acquiring improvement / convergence support</u> via constrained updates relative to the reference policy, and
+            (2) <u>replacing domain-specific task descriptions</u> (e.g., dataset/model info in hyperparameter tuning) with
+            <u>task-agnostic statistical signals</u> produced by the reference policy (e.g., mean/uncertainty summaries),
             improving scalability to unseen BO tasks.
             <br>
             <a href="files/BO-SCULPT-3.pdf" target="_blank">Paper</a> |
@@ -416,11 +418,11 @@
           <!-- 文字：垂直置中 -->
           <td class="pub-description" style="vertical-align: middle;">
             <papertitle>Text-to-Appearance Inverse Rendering with Vision–Language Feedback</papertitle><br><br>
-            We study <b>unpaired text-to-appearance inverse rendering</b>, where a differentiable renderer is optimized using
-            <b>only text prompts, without any reference images</b>. Since direct CLIP-based optimization from text is often
-            <b>vague and under-constrained</b>, we introduce vision–language feedback as an <b>optimization confiner</b>.
-            The VLM <b>(1) augments ambiguous textual descriptions into concrete, parameter-aware instructions</b> and <b>(2) determines
-            which scene parameters should be updated, while simultaneously tightening feasible ranges for all parameters</b>.
+            We study <u>unpaired text-to-appearance inverse rendering</u>, where a differentiable renderer is optimized using
+            <u>only text prompts, without any reference images</u>. Since direct CLIP-based optimization from text is often
+            <u>vague and under-constrained</u>, we introduce vision–language feedback as an <u>optimization confiner</u>.
+            The VLM <u>(1) augments ambiguous textual descriptions into concrete, parameter-aware instructions</u> and <u>(2) determines
+            which scene parameters should be updated, while simultaneously tightening feasible ranges for all parameters</u>.
             This guidance stabilizes optimization and improves prompt adherence and visual clarity compared to
             naive CLIP-only methods.
             <br>
